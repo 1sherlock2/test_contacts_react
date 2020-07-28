@@ -1,0 +1,64 @@
+Arguments: 
+  /home/alim/.nvm/versions/node/v14.3.0/bin/node /home/alim/.nvm/versions/node/v14.3.0/bin/yarn add .
+
+PATH: 
+  /home/alim/.nvm/versions/node/v14.3.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  14.3.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:66:26)
+
+npm manifest: 
+  {
+  	"name": "test_contacts_react",
+  	"version": "1.0.0",
+  	"description": "",
+  	"main": "index.js",
+  	"scripts": {
+  		"build": "babel src -d dist",
+  		"start": "nodemon index.js",
+  		"build-start": "yarn build && yarn start",
+  		"test": "echo \"Error: no test specified\" && exit 1"
+  	},
+  	"author": "Alim Gazdiev",
+  	"license": "ISC",
+  	"dependencies": {
+  		"body-parser": "^1.19.0",
+  		"concurrently": "^5.2.0",
+  		"cors": "^2.8.5",
+  		"cross-env": "^7.0.2",
+  		"express": "^4.17.1",
+  		"mongoose": "^5.9.19",
+  		"yarn": "^1.22.4"
+  	},
+  	"devDependencies": {
+  		"babel-cli": "^6.26.0",
+  		"babel-core": "^6.26.3",
+  		"babel-plugin-transform-object-rest-spread": "^6.26.0",
+  		"babel-preset-env": "^1.7.0",
+  		"babel-preset-stage-0": "^6.24.1",
+  		"bcryptjs": "^2.4.3",
+  		"config": "^3.3.1",
+  		"cookie-parser": "^1.4.5",
+  		"express-validator": "^6.6.0",
+  		"gh-pages": "^3.1.0",
+  		"jsonwebtoken": "^8.5.1",
+  		"multer": "^1.4.2",
+  		"nodemon": "^2.0.4"
+  	}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
