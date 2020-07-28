@@ -1,11 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
+import HeaderContainer from './components/header/HeaderContainer';
+import ContactsContainer from './components/contacts/ContactsContainer';
 
 function App() {
 	return (
-		<div>
-			<h1> Hello </h1>
+		<div className='container-fluid'>
+			<div className='header'>
+				<HeaderContainer />
+			</div>
+			<div className='contacts'>
+				<ContactsContainer />
+			</div>
 		</div>
 	);
 }
