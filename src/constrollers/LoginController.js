@@ -6,8 +6,8 @@ const jwt = require('jsonwebtoken');
 
 router.post('/register', (req, res) => {
 	try {
-		const { email, password } = req.body;
-		return LoginModel.findOne({ email })
+		const { nickname, password } = req.body;
+		return LoginModel.findOne({ nickname })
 			.then((item) => {
 				if (item) {
 					return res.status(400).json({
@@ -16,13 +16,13 @@ router.post('/register', (req, res) => {
 				}
 				bcrypt.hash(password, 12).then((hashPassword) => {
 					const login = new LoginModel({
-						email: email,
+						nickname: nickname,
 						password: hashPassword
 					});
 					console.log(login);
 					login.save().then(() => {
 						return res.status(200).json({
-							email: email,
+							nickname: nickname,
 							password: hashPassword
 						});
 					});
@@ -36,16 +36,16 @@ router.post('/register', (req, res) => {
 
 router.post('/auth', (req, res) => {
 	try {
-		const { email, password } = req.body;
-		console.log(email, password);
-		return LoginModel.findOne({ email }).then((user) => {
+		const { nickname, password } = req.body;
+		console.log(nickname, password);
+		return LoginModel.findOne({ nickname }).then((user) => {
 			console.log(user);
 			if (!user) {
 				return res.status(400).json({
 					message: 'It user is not found'
 				});
 			}
-			const token = jwt.sign({ userId: user.id }, 'express_study', { expiresIn: '1h' });
+			const token = jwt.sign({ userId: user.id }, 'test_contacts_react', { expiresIn: '1h' });
 			bcrypt.compare(password, user.password).then((data) => {
 				if (!data) {
 					return res.status(400).json({

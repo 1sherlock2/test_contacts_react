@@ -13,10 +13,10 @@ var jwt = require('jsonwebtoken');
 router.post('/register', function (req, res) {
 	try {
 		var _req$body = req.body,
-		    email = _req$body.email,
+		    nickname = _req$body.nickname,
 		    password = _req$body.password;
 
-		return LoginModel.findOne({ email: email }).then(function (item) {
+		return LoginModel.findOne({ nickname: nickname }).then(function (item) {
 			if (item) {
 				return res.status(400).json({
 					message: 'it user was created'
@@ -24,13 +24,13 @@ router.post('/register', function (req, res) {
 			}
 			bcrypt.hash(password, 12).then(function (hashPassword) {
 				var login = new LoginModel({
-					email: email,
+					nickname: nickname,
 					password: hashPassword
 				});
 				console.log(login);
 				login.save().then(function () {
 					return res.status(200).json({
-						email: email,
+						nickname: nickname,
 						password: hashPassword
 					});
 				});
@@ -46,18 +46,18 @@ router.post('/register', function (req, res) {
 router.post('/auth', function (req, res) {
 	try {
 		var _req$body2 = req.body,
-		    email = _req$body2.email,
+		    nickname = _req$body2.nickname,
 		    password = _req$body2.password;
 
-		console.log(email, password);
-		return LoginModel.findOne({ email: email }).then(function (user) {
+		console.log(nickname, password);
+		return LoginModel.findOne({ nickname: nickname }).then(function (user) {
 			console.log(user);
 			if (!user) {
 				return res.status(400).json({
 					message: 'It user is not found'
 				});
 			}
-			var token = jwt.sign({ userId: user.id }, 'express_study', { expiresIn: '1h' });
+			var token = jwt.sign({ userId: user.id }, 'test_contacts_react', { expiresIn: '1h' });
 			bcrypt.compare(password, user.password).then(function (data) {
 				if (!data) {
 					return res.status(400).json({

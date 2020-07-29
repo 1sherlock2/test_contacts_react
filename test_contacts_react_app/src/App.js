@@ -2,13 +2,19 @@ import React from 'react';
 import './App.scss';
 import HeaderContainer from './components/header/HeaderContainer';
 import ContactsContainer from './components/contacts/ContactsContainer';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, withRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { connect } from 'react-redux';
 import AuthContainer from './components/auth/AuthContainer';
 import store from './redux/store/store';
+import { compose } from 'redux';
+import { AuthRedirectHOC } from './redux/HOC/AuthRedirectHOC';
 
 const App = (props) => {
+	// useEffect(() => {
+
+	// })
+
 	if (!props.isAuth) {
 		return <AuthContainer />;
 	}
@@ -24,13 +30,7 @@ const App = (props) => {
 	);
 };
 
-let mapStateToProps = (state) => {
-	return {
-		isAuth: state.authData.isAuth
-	};
-};
-
-const AppContainer = connect(mapStateToProps, {})(App);
+const AppContainer = compose(withRouter, AuthRedirectHOC)(App);
 
 const MainApp = () => {
 	return (

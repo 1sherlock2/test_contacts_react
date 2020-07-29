@@ -9,14 +9,14 @@ const Auth = (props) => {
 	return (
 		<div className='container container_auth'>
 			<div className='login_h1'>
-				<h1> Entry in you blog </h1>
+				<h1> Entry in you contacts </h1>
 			</div>
 			<div className='row justify-content-center'>
 				<div className='col-8'>
 					<form onSubmit={props.handleSubmit}>
 						<div className='form-group'>
-							<label htmlFor='exampleInputEmail1'> Email address </label>
-							{createFrom('email', Input, 'email', 'form-control', 'exampleInputEmail1', 'your email', [])}
+							<label htmlFor='exampleInputNickName'> Nickname</label>
+							{createFrom('nickname', Input, 'text', 'form-control', 'exampleInputNickName', 'your nickname', [])}
 							<small id='emailHelp' className='form-text text-muted'>
 								We'll never share your email with anyone else.
 							</small>
@@ -28,14 +28,12 @@ const Auth = (props) => {
 						<div className='form-group form-check'>
 							{createFrom('checkbox', Input, 'checkbox', 'form-check-input', 'exampleCheck1', [], [])}
 							<label className='form-check-label' htmlFor='exampleCheck1'>
-								{' '}
-								Remember me{' '}
+								Remember me
 							</label>
 						</div>
 						<div className='buttons_auth_form'>
 							<div className='button_auth_form'>
 								<button type='submit' className='btn btn-primary'>
-									{' '}
 									Login
 								</button>
 							</div>
@@ -46,7 +44,6 @@ const Auth = (props) => {
 									onClick={() => {
 										props.redirectFromRegister();
 									}}>
-									{' '}
 									Register
 								</button>
 							</div>
