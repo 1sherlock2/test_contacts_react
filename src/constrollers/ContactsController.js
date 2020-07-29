@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/:userId/contacts', (req, res) => {
 	try {
-		// return res.send(contacts);
+		console.log(req.params.userId);
 		ContactsModel.find({ userId: req.params.userId }).then((contacts) => {
 			if (!contacts) {
 				return res.status(400).json({ message: 'It contacts is not defined' });
@@ -25,7 +25,8 @@ router.post('/:userId/set_contact', (req, res) => {
 			secondName: data.secondName,
 			company: data.company,
 			phone: data.phone,
-			description: data.description
+			description: data.description,
+			userId: req.params.userId
 		});
 		contact.save().then(() => {
 			return res.status(200).json({ contact });

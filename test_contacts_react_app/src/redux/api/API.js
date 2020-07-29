@@ -13,3 +13,9 @@ export const loginAPI = {
 		return instance.post('auth', formData);
 	}
 };
+
+export const contactsAPI = {
+	getContactsAPI(userId) {
+		return instance.get(`app/${userId}/contacts`);
+	}
+};

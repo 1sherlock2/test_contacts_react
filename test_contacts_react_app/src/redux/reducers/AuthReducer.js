@@ -143,18 +143,16 @@ export const registerThunk = (formData) => (dispatch) => {
 
 export const authThunk = (formData) => (dispatch) => {
 	dispatch(toggleAuthDispatch());
-	loginAPI
-		.authFormAPI(formData)
-		.then((response) => {
-			if (response.status === 200) {
-				let { token, userId } = response.data;
-				dispatch(authDispatchTrue(token, userId));
-				dispatch(toggleAuthSuccessDispatch());
-			}
-		})
-		.catch((error) => {
-			if (error.response.status === 400) {
-				dispatch(errorToggleAuthSuccessDispatch());
-			}
-		});
+	loginAPI.authFormAPI(formData).then((response) => {
+		if (response.status === 200) {
+			let { token, userId } = response.data;
+			dispatch(authDispatchTrue(token, userId));
+			dispatch(toggleAuthSuccessDispatch());
+		}
+	});
+	// .catch((error) => {
+	// 	if (error.response.status === 400) {
+	// 		dispatch(errorToggleAuthSuccessDispatch());
+	// 	}
+	// });
 };

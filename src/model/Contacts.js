@@ -7,7 +7,8 @@ const ContactsSchema = new Schema(
 		secondName: { type: String },
 		company: { type: String },
 		phone: { type: Number, required: true },
-		description: { type: String }
+		description: { type: String },
+		userId: { type: Schema.Types.ObjectId, ref: 'Login' }
 	},
 	{
 		timestamps: true

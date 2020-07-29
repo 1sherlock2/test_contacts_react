@@ -1,16 +1,59 @@
 import React from 'react';
 import './Contacts.scss';
+import classname from 'classnames';
 
 const Contacts = (props) => {
 	return (
 		<div className='row contacts_row'>
 			<div className='col'>
-				<div>
+				<div className='add_contact'>
 					<button>Add contact</button>
 				</div>
-				<div>contacts</div>
+				<div>
+					{props.contactInfo &&
+						props.contactInfo.map((item, index) => {
+							return (
+								<div
+									className={classname(
+										{
+											active: props.activeClass === index
+										},
+										'card'
+									)}
+									onClick={() => props.selectActiveElement(item._id, index)}>
+									<div className='card-body'>
+										<h4 className='card-title'>
+											{item.name} {item.secondName}
+										</h4>
+										<button href='#' className='card-link'>
+											Card link
+										</button>
+										<button href='#' className='card-link'>
+											Another link
+										</button>
+									</div>
+								</div>
+							);
+						})}
+				</div>
 			</div>
-			<div className='col'> Info </div>
+			<div>
+				{props.fullContact &&
+					props.fullContact.map((item) => {
+						return (
+							<div className='card'>
+								<div className='card-body'>
+									<h4 className='card-title'>
+										{item.name} {item.secondName}
+									</h4>
+									<h5 className='card-title'>Phone: {item.phone}</h5>
+									<h6 className='card-subtitle mb-2 text-muted'>{item.company}</h6>
+									<p className='card-text'>{item.description}</p>
+								</div>
+							</div>
+						);
+					})}
+			</div>
 		</div>
 	);
 };
