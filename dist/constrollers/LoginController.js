@@ -16,6 +16,7 @@ router.post('/register', function (req, res) {
 		    nickname = _req$body.nickname,
 		    password = _req$body.password;
 
+		console.log(nickname, password);
 		return LoginModel.findOne({ nickname: nickname }).then(function (item) {
 			if (item) {
 				return res.status(400).json({

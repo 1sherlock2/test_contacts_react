@@ -4,10 +4,10 @@ const mongoose = require('mongoose');
 const ContactsSchema = new Schema(
 	{
 		name: { type: String, required: true },
-		secondName: { type: String, required: true },
-		company: { type: String, required: true },
+		secondName: { type: String },
+		company: { type: String },
 		phone: { type: Number, required: true },
-		description: { type: String, required: true }
+		description: { type: String }
 	},
 	{
 		timestamps: true

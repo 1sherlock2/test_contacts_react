@@ -19,10 +19,10 @@ const Register = (props) => {
 				<div className='col-8'>
 					<form onSubmit={props.handleSubmit}>
 						<div className='form-group'>
-							<label htmlFor='exampleInputEmail1'>Email address</label>
-							{createFrom('email', Input, 'email', 'form-control', 'exampleInputEmail1', 'your email', minLengthEmail)}
-							<small id='emailHelp' className='form-text text-muted'>
-								We'll never share your email with anyone else.
+							<label htmlFor='exampleInputNickName'>Nickname</label>
+							{createFrom('nickname', Input, 'text', 'form-control', 'exampleInputNickName', 'your nickname', minLengthEmail)}
+							<small id='nicknameHelp' className='form-text text-muted'>
+								We'll never share your nickname with anyone else.
 							</small>
 						</div>
 						<div className='form-group'>
@@ -40,13 +40,11 @@ const Register = (props) => {
 						<div className='form-group form-check'>
 							{createFrom('checkbox', Input, 'checkbox', 'form-check-input', 'exampleCheck1', [], [])}
 							<label className='form-check-label' htmlFor='exampleCheck1'>
-								{' '}
-								Remember me{' '}
+								Remember me
 							</label>
 						</div>
 						<div className='register_buttons'>
 							<button type='submit' className='btn btn-primary'>
-								{' '}
 								Register
 							</button>
 							<button
@@ -54,7 +52,6 @@ const Register = (props) => {
 								onClick={() => {
 									props.redirectFromRegisterFalse();
 								}}>
-								{' '}
 								Back on Login
 							</button>
 						</div>
@@ -75,7 +72,6 @@ const Register = (props) => {
 						{props.errorToggleRegisterSuccess && (
 							<div className='error_toggle_register_success'>
 								<span className='error_toggle_register_success_span'>
-									{' '}
 									Some happened error, maybe it is user created or server is not working{' '}
 								</span>
 							</div>

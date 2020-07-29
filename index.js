@@ -7,7 +7,6 @@ const contacts = require('./src/constrollers/ContactsController');
 const app = express();
 const config = require('config');
 const path = require('path');
-const e = require('express');
 
 const PORT = config.get('port');
 

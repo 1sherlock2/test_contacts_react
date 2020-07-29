@@ -17,8 +17,8 @@ const Auth = (props) => {
 						<div className='form-group'>
 							<label htmlFor='exampleInputNickName'> Nickname</label>
 							{createFrom('nickname', Input, 'text', 'form-control', 'exampleInputNickName', 'your nickname', [])}
-							<small id='emailHelp' className='form-text text-muted'>
-								We'll never share your email with anyone else.
+							<small id='nicknameHelp' className='form-text text-muted'>
+								We'll never share your nickname with anyone else.
 							</small>
 						</div>
 						<div className='form-group'>
@@ -70,7 +70,7 @@ const Auth = (props) => {
 							)}
 							{props.errorToggleAuthSuccess && (
 								<div className='error_toggle_auth_success'>
-									<span className='error_toggle_auth_success_span'> Email or password is not correct </span>
+									<span className='error_toggle_auth_success_span'> Nickname or password is not correct </span>
 								</div>
 							)}
 						</div>

@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 router.post('/register', (req, res) => {
 	try {
 		const { nickname, password } = req.body;
+		console.log(nickname, password);
 		return LoginModel.findOne({ nickname })
 			.then((item) => {
 				if (item) {
