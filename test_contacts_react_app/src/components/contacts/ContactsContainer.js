@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Contacts from './Contacts';
 import { connect } from 'react-redux';
 import { contactsThunk, selectContactDispatch, deleteContactThunk } from '../../redux/reducers/ContactsReducer';
-import { compose } from 'redux';
 import { withRouter } from 'react-router-dom';
 
 const ContactsContainer = (props) => {

@@ -6,8 +6,12 @@
 	"scripts": {
 		"build": "babel src -d dist",
 		"start": "node index.js",
-		"build-start": "yarn build && yarn start",
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"build-start": "npm run build && npm run start",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"client:install": "npm install --prefix test_contacts_react_app",
+		"client:build": "npm run build --prefix test_contacts_react_app",
+		"client:start": "npm run start --prefix test_contacts_react_app",
+		"dev": "concurrently \"npm run build-start\" \"npm run client:start\""
 	},
 	"author": "Alim Gazdiev",
 	"license": "ISC",

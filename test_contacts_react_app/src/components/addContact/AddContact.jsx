@@ -58,7 +58,7 @@ const AddContact = (props) => {
 						{createFrom('description', Input, 'text', 'form-control', 'submitImageURL', 'enter description about contact')}
 					</div>
 					<button type='submit' className='btn btn-primary'>
-						Send post
+						Create contact
 					</button>
 				</form>
 			</div>

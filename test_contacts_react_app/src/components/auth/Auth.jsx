@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, reduxForm } from 'redux-form';
+import { reduxForm } from 'redux-form';
 import { createFrom } from '../utils/forms/CreateForm';
 import { Input } from '../utils/forms/component/Input';
 import './Auth.scss';

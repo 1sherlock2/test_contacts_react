@@ -101,7 +101,7 @@ const Contacts = (props) => {
 						})}
 				</div>
 			</div>
-			<div>
+			<div className='fullContact'>
 				{props.fullContact &&
 					props.fullContact.map((item) => {
 						return (

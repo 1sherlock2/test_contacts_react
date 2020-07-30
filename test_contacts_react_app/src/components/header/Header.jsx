@@ -1,6 +1,5 @@
 import React from 'react';
 import './Header.scss';
-import { connect } from 'react-redux';
 
 const Header = (props) => {
 	return (
@@ -31,9 +30,4 @@ const Header = (props) => {
 	);
 };
 
-let mapStateToProps = (state) => {
-	return {
-		nickname: state.authData.nickname
-	};
-};
 export default Header;
