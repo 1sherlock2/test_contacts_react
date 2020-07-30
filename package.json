@@ -11,7 +11,7 @@
 		"client:install": "npm install --prefix test_contacts_react_app",
 		"client:build": "npm run build --prefix test_contacts_react_app",
 		"client:start": "npm run start --prefix test_contacts_react_app",
-		"install": "npm install && npm run client:install",
+		"server:install": "npm install",
 		"dev": "concurrently  \"npm run build-start\" \"npm run client:start\""
 	},
 	"author": "Alim Gazdiev",
