@@ -1,0 +1,25 @@
+.add_contact_form {
+	width: 50%;
+	margin: 5% auto auto 24%;
+	.add_contact_a_button {
+		margin-bottom: 5%;
+		.btn-primary {
+			background-color: #5a6268;
+			border-color: #5a6268;
+			border: 2.5px solid #6c757d;
+		}
+	}
+}
+
+.posts_content {
+	form {
+		label {
+			color: #edeff1;
+		}
+		.btn-primary {
+			background-color: #5a6268;
+			border-color: #5a6268;
+			border: 2.5px solid #6c757d;
+		}
+	}
+}

@@ -1,12 +1,44 @@
+.card-header {
+	background-color: rgba(113, 235, 225, 0.143);
+	text-align: center;
+}
 .header_row {
+	color: rgb(235, 217, 217);
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 60px;
-	background-color: red;
+	background-color: rgba(113, 235, 225, 0.143);
+	.card-header {
+		background-color: rgba(113, 235, 225, 0.143);
+		text-align: center;
+	}
+	.jumbotron-fluid {
+		background-color: rgba(113, 235, 225, 0.143);
+	}
 	.nickname {
 		text-align: left;
 	}
 	.logout {
+		background-color: rgba(113, 235, 225, 0.143);
 		text-align: right;
+		.bi-upload {
+			margin: 3.5% 2% 2% 2%;
+			padding: 1%;
+			cursor: pointer;
+			border-radius: 15%;
+			border: 2px solid rgb(235, 217, 217);
+			-webkit-border-radius: 15%;
+			-moz-border-radius: 15%;
+			-ms-border-radius: 15%;
+			-o-border-radius: 15%;
+		}
+	}
+	.jumbotron-fluid {
+		.container {
+			h3 {
+				margin-top: 2.5%;
+				text-align: center;
+			}
+		}
 	}
 }

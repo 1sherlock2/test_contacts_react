@@ -1,7 +1,14 @@
 .container_auth {
 	margin-top: 8%;
 	font-family: 'Open Sans Light';
-
+	form {
+		label {
+			color: #edeff1;
+		}
+		small {
+			color: white;
+		}
+	}
 	.login_h1 {
 		margin: 5% auto;
 		text-align: center;

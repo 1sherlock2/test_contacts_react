@@ -15,8 +15,8 @@ const minLengthPostsFormText = minLength(5);
 
 const EditContact = (props) => {
 	return (
-		<div>
-			<div>
+		<div className='add_contact_form'>
+			<div className='add_contact_a_button'>
 				<NavLink to={'/'}>
 					<button type='button' className='btn__posts btn-primary btn-lg nav_button_form'>
 						Back

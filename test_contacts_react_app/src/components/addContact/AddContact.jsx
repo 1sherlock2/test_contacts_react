@@ -15,8 +15,8 @@ const minLengthPostsFormText = minLength(5);
 
 const AddContact = (props) => {
 	return (
-		<div>
-			<div>
+		<div className='add_contact_form'>
+			<div className='add_contact_a_button'>
 				<NavLink to={'/'}>
 					<button type='button' className='btn__posts btn-primary btn-lg nav_button_form'>
 						Back
@@ -43,14 +43,17 @@ const AddContact = (props) => {
 						])}
 					</div>
 					<div className='form-group'>
+						<label htmlFor='exampleFormControlTextarea1'>Phone number </label>
+						{createFrom('phone', Textarea, {}, 'form-control', 'exampleFormControlTextarea1', 'enter phone number', [
+							minLengthPostsFormText,
+							requiredField
+						])}
+					</div>
+					<div className='form-group form-check'>
 						<label htmlFor='image'>Company</label>
 						{createFrom('company', Input, 'text', 'form-control', 'submitImageURL', 'enter image url')}
 					</div>
-					<div className='form-group'>
-						<label htmlFor='exampleFormControlTextarea1'>Phone number </label>
-						{createFrom('phone', Textarea, {}, 'form-control', 'exampleFormControlTextarea1', 'enter phone number', [minLengthPostsFormText])}
-					</div>
-					<div className='form-group'>
+					<div className='form-group form-check'>
 						<label htmlFor='image'>Description</label>
 						{createFrom('description', Input, 'text', 'form-control', 'submitImageURL', 'enter description about contact')}
 					</div>
