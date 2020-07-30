@@ -14,7 +14,7 @@ const ERROR_TOGGLE_AUTH_SUCCESS = 'ERROR_TOGGLE_AUTH_SUCCESS';
 
 let initialState = {
 	userId: null,
-	nickName: null,
+	nickname: null,
 	token: null,
 	isAuth: false,
 	isRegistered: false,
@@ -44,6 +44,7 @@ export const authReducer = (state = initialState, action) => {
 				...state,
 				token: action.token,
 				userId: action.userId,
+				nickname: action.nickname,
 				isRegistered: false,
 				isAuth: true
 			};
@@ -101,6 +102,7 @@ export const authReducer = (state = initialState, action) => {
 			};
 		case EXIT_ACCOUNT:
 			return {
+				nickname: null,
 				token: null,
 				userId: null,
 				isAuth: false
@@ -111,7 +113,7 @@ export const authReducer = (state = initialState, action) => {
 };
 
 const registerDispatch = (token, userId) => ({ type: SET_REGISTER, token, userId });
-const authDispatchTrue = (token, userId) => ({ type: SET_AUTH_TRUE, token, userId });
+const authDispatchTrue = (token, userId, nickname) => ({ type: SET_AUTH_TRUE, token, userId, nickname });
 export const redirectFromRegister = () => ({ type: REDIRECT_FROM_REGISTER });
 export const redirectFromRegisterFalse = () => ({ type: REDIRECT_FROM_REGISTER_FALSE });
 const toggleRegisterDispatch = () => ({ type: TOGGLE_REGISTER });
@@ -145,8 +147,8 @@ export const authThunk = (formData) => (dispatch) => {
 	dispatch(toggleAuthDispatch());
 	loginAPI.authFormAPI(formData).then((response) => {
 		if (response.status === 200) {
-			let { token, userId } = response.data;
-			dispatch(authDispatchTrue(token, userId));
+			let { token, userId, nickname } = response.data;
+			dispatch(authDispatchTrue(token, userId, nickname));
 			dispatch(toggleAuthSuccessDispatch());
 		}
 	});

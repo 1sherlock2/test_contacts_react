@@ -46,6 +46,7 @@ router.post('/auth', (req, res) => {
 					message: 'It user is not found'
 				});
 			}
+			const nickname = user.nickname;
 			const token = jwt.sign({ userId: user.id }, 'test_contacts_react', { expiresIn: '1h' });
 			bcrypt.compare(password, user.password).then((data) => {
 				if (!data) {
@@ -54,7 +55,7 @@ router.post('/auth', (req, res) => {
 					});
 				}
 			});
-			return res.status(200).json({ token, userId: user.id });
+			return res.status(200).json({ token, userId: user.id, nickname: nickname });
 		});
 	} catch (e) {
 		console.log(e.message);
