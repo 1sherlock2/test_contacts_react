@@ -17,5 +17,14 @@ export const loginAPI = {
 export const contactsAPI = {
 	getContactsAPI(userId) {
 		return instance.get(`app/${userId}/contacts`);
+	},
+	postAddContactAPI(userId, formData) {
+		return instance.post(`app/${userId}/set_contact`, formData);
+	},
+	editContactThunk(id, formData) {
+		return instance.put(`/app/update_contact/${id}`, formData);
+	},
+	deleteContactAPI(id) {
+		return instance.delete(`/app/delete_contact/${id}`);
 	}
 };
